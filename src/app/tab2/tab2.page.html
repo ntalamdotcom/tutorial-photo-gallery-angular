@@ -17,6 +17,8 @@
     <ion-row>
     <ion-col size="6" *ngFor="let photo of photoService.photos; index as position">
       <ion-img [src]="photo.webviewPath" (click)="showActionSheet(photo, position)"></ion-img>
+      <label  >{{photo.filepath}}</label>
+      
     </ion-col>
     </ion-row>
   </ion-grid>

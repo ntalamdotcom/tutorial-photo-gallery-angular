@@ -8,5 +8,7 @@ import { Component } from '@angular/core';
 export class Tab3Page {
 
   constructor() {}
-
+  public async showExplorer() {
+    console.log("fuel is bombing");
+  }
 }
