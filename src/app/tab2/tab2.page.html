@@ -5,6 +5,16 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
+<ion-content padding id="horizontalContainer">
+  <ion-list class="listContainer" *ngFor="let photo of photoService.photos; index as position">
+    <ion-item class="fileContainer">
+      <ion-img 
+        [src]="photo.webviewPath"   
+        (click)="showActionSheet(photo, position)">
+      </ion-img>
+    </ion-item>
+  </ion-list>
+</ion-content>
 
 <ion-content>
   <ion-header collapse="condense">
@@ -12,19 +22,7 @@
       <ion-title size="large">Photo Gallery</ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-content padding id="horizontalContainer">
-    <!-- let this fill the remaining! -->
-      <ion-list class="listContainer" *ngFor="let photo of photoService.photos; index as position">
-        <ion-item class="fileContainer">
-          <ion-img 
-          [src]="photo.webviewPath" 
-          
-          (click)="showActionSheet(photo, position)"></ion-img>
-          <label>{{photo.filepath}}</label>
-        </ion-item>
-      </ion-list>
-   
-  </ion-content>
+  
 
   <ion-fab vertical="bottom" horizontal="center" slot="fixed">
     <ion-fab-button (click)="photoService.addNewToGallery()">
@@ -32,3 +30,4 @@
     </ion-fab-button>
   </ion-fab>
 </ion-content>
+

@@ -5,7 +5,8 @@ ion-content ion-toolbar {
 
 #horizontalContainer {
   height:200px; /* 40px - more place for scrollbar, is hidden under parent box */
-
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .fileContainer{
